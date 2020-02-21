@@ -1,0 +1,12 @@
+
+<%= link_to "Add Item", new_department_item_path(@department)%>
+<h1>Department Type: <%= @department.name %></h1>
+
+
+
+<% @department.items.each do |item|%>
+  <h3><%= link_to item.name, [@department, item] %></h3>
+  <h3><%= item.description%></h3>
+  <h3><%= item.cost%></h3>
+<% end %>
+<%= link_to "Go Back to Departments", departments_path %>

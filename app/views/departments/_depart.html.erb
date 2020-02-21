@@ -1,0 +1,12 @@
+<h1><%= @department.id ? 'Edit Department' : 'Create Department' %></h1>
+<%= link_to  "back to departments", departments_path %>
+<hr />
+<%= form_for [@department] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true, autofocus: true %>
+  <br />
+  <%= f.label :phone %>
+  <%= f.text_field :phone, required: true %>
+
+  <%= f.submit %>
+<% end %>
